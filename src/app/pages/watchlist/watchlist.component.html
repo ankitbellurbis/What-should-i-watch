@@ -1,0 +1,13 @@
+<div class="container">
+  <h2 class="mb-4 text-center">My Watchlist</h2>
+
+  <div *ngIf="watchlist.length === 0" class="text-muted text-center">
+    Your watchlist is empty.
+  </div>
+
+  <div class="row g-4" *ngIf="watchlist.length > 0">
+    <div class="col-md-3" *ngFor="let movie of watchlist">
+      <app-movie-card [movie]="movie"></app-movie-card>
+    </div>
+  </div>
+</div>

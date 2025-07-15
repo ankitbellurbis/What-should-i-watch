@@ -1,0 +1,14 @@
+<button
+  class="watchlist-btn"
+  [class.active]="isInWatchlist"
+  [attr.title]="isInWatchlist ? 'Remove from Watchlist' : 'Add to Watchlist'"
+  (click)="toggleWatchlist()"
+>
+  <i
+    class="bi"
+    [ngClass]="{
+      'bi-bookmark-fill': isInWatchlist,
+      'bi-bookmark': !isInWatchlist
+    }"
+  ></i>
+</button>

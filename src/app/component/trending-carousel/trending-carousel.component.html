@@ -1,0 +1,56 @@
+<ng-container *ngIf="movies.length">
+  <div
+    id="carouselTrending"
+    class="carousel slide"
+    data-bs-ride="carousel"
+    data-bs-pause="false"
+    data-bs-interval="5000"
+  >
+    <div class="carousel-inner">
+      <div
+        *ngFor="let movie of movies; let i = index"
+        class="carousel-item"
+        [class.active]="i === 0"
+      >
+        <div
+          class="carousel-bg"
+          [ngStyle]="{ 'background-image': 'url(' + backdropUrl(movie) + ')' }"
+        >
+          <div class="carousel-caption text-start">
+            <small class="text-info">#{{ i + 1 }} Spotlight</small>
+            <h2 class="fw-bold">{{ movie.title }}</h2>
+            <p class="d-none d-md-block">
+              {{ movie.overview?.slice(0, 200) }}...
+            </p>
+            <button
+              class="btn btn-light btn-sm me-2"
+              (click)="goToDetail(movie.id)"
+            >
+              Detail →
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Prev -->
+    <button
+      class="carousel-control-prev"
+      type="button"
+      data-bs-target="#carouselTrending"
+      data-bs-slide="prev"
+    >
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+
+    <!-- Next -->
+    <button
+      class="carousel-control-next"
+      type="button"
+      data-bs-target="#carouselTrending"
+      data-bs-slide="next"
+    >
+      <span class="carousel-control-next-icon"></span>
+    </button>
+  </div>
+</ng-container>

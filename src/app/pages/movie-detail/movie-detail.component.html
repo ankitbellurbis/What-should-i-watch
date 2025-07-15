@@ -1,0 +1,31 @@
+<div class="container" *ngIf="!loading">
+  <div class="row">
+    <div class="col-md-4">
+      <img [src]="posterUrl" class="img-fluid rounded" alt="Poster" />
+    </div>
+    <div class="col-md-8">
+      <h2>{{ movie.title }}</h2>
+      <p class="text-muted">
+        Released: {{ movie.release_date }} | Rating: ⭐ {{ movie.vote_average }}
+      </p>
+      <p>{{ movie.overview }}</p>
+      <div class="mt-4">
+        <h5>Director</h5>
+        <p>{{ director }}</p>
+
+        <h5>Top Cast</h5>
+        <ul class="list-inline">
+          <li class="list-inline-item me-3" *ngFor="let actor of cast">
+            {{ actor.name }}
+          </li>
+        </ul>
+      </div>
+
+      <app-watchlist-button [movie]="movie"></app-watchlist-button>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="loading" class="text-center mt-5">
+  <div class="spinner-border text-primary" role="status"></div>
+</div>

@@ -1,0 +1,32 @@
+<div
+  class="compact-card d-flex gap-3 align-items-center border-bottom position-relative"
+  (click)="goToDetail()"
+>
+  <img [src]="posterUrl" [alt]="movie.title" class="poster" />
+
+  <div class="flex-grow-1 overflow-hidden">
+    <div class="d-flex justify-content-between align-items-start">
+      <h6
+        class="title mb-1"
+        [attr.title]="movie.title"
+      >
+        {{ movie.title }}
+      </h6>
+      <span class="badge bg-secondary text-uppercase ms-2">
+        {{ getMediaType() }}
+      </span>
+    </div>
+
+    <small class="text-muted d-block">
+      {{ movie.release_date | date: 'yyyy' }}
+      • {{ movie.vote_average }} ⭐
+      • {{ getLanguage(movie.original_language) }}
+    </small>
+
+    <div *ngIf="movie.genre_ids?.length" class="genre-tags mt-1">
+      <small class="text-muted">
+        {{ getGenres(movie.genre_ids).join(', ') }}
+      </small>
+    </div>
+  </div>
+</div>

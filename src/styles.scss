@@ -1,1 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+  background-color: #121212;
+  color: #fff;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+a {
+  color: #ffc107;
+  text-decoration: none;
+}
+
+main {
+  min-height: 80vh;
+}
+
+.card {
+  transition: transform 0.3s ease;
+  &:hover {
+    transform: scale(1.03);
+  }
+}

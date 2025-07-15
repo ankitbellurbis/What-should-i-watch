@@ -1,0 +1,29 @@
+<div class="card movie-card position-relative shadow-sm">
+  <img
+  [src]="posterUrl"
+  class="card-img-top"
+  [alt]="movie.title"
+  (error)="useFallback()"
+/>
+  <span class="badge bg-success quality-badge">{{ quality }}</span>
+
+  <div class="card-body">
+    <div>
+      <h6 class="card-title d-flex align-items-center justify-content-between">{{ movie.title }} <span class="card-subtitle mb-0">({{ movie.release_date | date: 'yyyy' }} • ⭐ {{ movie.vote_average }} • {{ language }}) </span> </h6>
+      <div class="genre-line text-muted small">
+        {{ genres.join(', ') }}
+        <span class="badge bg-secondary text-uppercase">( {{ mediaType }} )</span>
+      </div>
+
+    </div>
+
+    <div class="d-flex justify-content-between align-items-center">
+      <a
+        [routerLink]="['/movie', movie.id]"
+        class="btn btn-sm btn-outline-primary"
+        >Details</a
+      >
+      <app-watchlist-button [movie]="movie"></app-watchlist-button>
+    </div>
+  </div>
+</div>

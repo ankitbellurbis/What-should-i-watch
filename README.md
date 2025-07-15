@@ -1,27 +1,108 @@
-# WhatShouldIWatchTonight
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.9.
+# 🎬 What Should I Watch Tonight?
 
-## Development server
+A movie discovery app built with **Angular 16**, **Bootstrap 5.3** that uses the **TMDB API** to let users explore, search, and save movies based on moods and preferences.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+---
 
-## Code scaffolding
+## 🌟 Features
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- 🔥 Mood-based discovery: *Feel Good*, *Action Fix*, *Mind Benders*, and more
+- 🔍 Search movies by title or actor
+- 📋 View detailed movie info: title, poster, rating, language, genres, type, director & cast
+- 📌 Add/Remove from Watchlist (stored via `localStorage`)
+- ⚡ Fully responsive with Bootstrap 5 and Bootswatch Quartz theme
+- 📊 Unit tests using Jasmine + Karma with >80% test coverage
+- 🚀 Carousel for trending movies and category-wise display
+- ✨ Animations, tooltips, badges, and custom icons
 
-## Build
+---
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## 🛠️ Installation & Setup
 
-## Running unit tests
+```bash
+# Clone the repo
+git clone https://github.com/your-username/what-should-i-watch-tonight.git
+cd what-should-i-watch-tonight
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+# Install dependencies
+npm install
 
-## Running end-to-end tests
+# Set your TMDB API key
+# (Create a file named .env if using ngx-environment or store it in environment.ts)
+# environment.ts
+export const environment = {
+  production: false,
+  tmdbApiKey: 'your_tmdb_api_key'
+};
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+# Start the dev server
+ng serve
+```
 
-## Further help
+Access the app at: [http://localhost:4200](http://localhost:4200)
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+---
+
+## 🧪 Running Unit Tests
+
+```bash
+ng test --code-coverage
+```
+
+Check coverage report at `/coverage/index.html`  
+> Ensure components like `WatchlistButtonComponent`, `MovieCardComponent`, `MovieDetailComponent` etc. are properly tested.
+
+---
+
+## 🗂 Folder Structure
+
+```
+src/
+├── app/
+│   ├── components/
+|   |   |-- compact-movie-card/
+|   |   |-- footer/
+│   │   ├── movie-card/
+│   │   ├── navbar/
+│   │   └── trending-carousel/
+│   │   └── watchlist-button/
+│   ├── constants/
+│   ├── pages/
+│   │   ├── landing/
+│   │   ├── discover/
+│   │   ├── movie-detail/
+│   │   └── watchlist/
+│   │   └── search/
+│   ├── services/
+│   ├── models/
+│   ├── app-routing.module.ts
+│   └── app.module.ts
+├── assets/
+└── environments/
+```
+
+---
+
+## 🌐 API Used
+
+- [TMDB API](https://developers.themoviedb.org/3)  
+  Used for movie data, search, genre list, trending, etc.
+
+---
+
+## 👨‍💻 Tech Stack
+
+- Angular 16
+- Bootstrap 5.3 + Bootswatch Quartz
+- TypeScript
+- TMDB API
+- Jasmine + Karma (Unit testing)
+- HTML/CSS (SCSS)
+
+---
+
+## 🙌 Author
+
+Made with ❤️ by [Ankit](https://github.com/your-username)  
+© 2025 What Should I Watch Tonight?

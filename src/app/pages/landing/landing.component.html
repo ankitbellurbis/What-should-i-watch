@@ -1,0 +1,63 @@
+<!-- Trending Carousel -->
+<app-trending-carousel [movies]="trending"></app-trending-carousel>
+
+<!-- Vertical Category Columns -->
+<div class="container py-4 landing-page">
+  <div class="row">
+    <!-- Feel Good -->
+    <div class="col-md-6 col-lg-3 mb-4">
+      <h5 class="mb-3 text-primary">Feel Good</h5>
+      <app-compact-movie-card
+        *ngFor="let movie of feelGood.slice(0, 6)"
+        [movie]="movie"
+      ></app-compact-movie-card>
+      <a
+        [routerLink]="['/discover', 'feel-good']"
+        class="badge bg-secondary view-more"
+        >View more →</a
+      >
+    </div>
+
+    <!-- Action Fix -->
+    <div class="col-md-6 col-lg-3 mb-4">
+      <h5 class="mb-3 text-danger">Action Fix</h5>
+      <app-compact-movie-card
+        *ngFor="let movie of actionFix.slice(0, 6)"
+        [movie]="movie"
+      ></app-compact-movie-card>
+      <a
+        [routerLink]="['/discover', 'action-fix']"
+        class="badge bg-secondary view-more"
+        >View more →</a
+      >
+    </div>
+
+    <!-- Mind Benders -->
+    <div class="col-md-6 col-lg-3 mb-4">
+      <h5 class="mb-3 text-warning">Mind Benders</h5>
+      <app-compact-movie-card
+        *ngFor="let movie of mindBenders.slice(0, 6)"
+        [movie]="movie"
+      ></app-compact-movie-card>
+      <a
+        [routerLink]="['/discover', 'mind-benders']"
+        class="badge bg-secondary view-more"
+        >View more →</a
+      >
+    </div>
+
+    <!-- New Category: Drama Picks -->
+    <div class="col-md-6 col-lg-3 mb-4">
+      <h5 class="mb-3 text-info">Drama Picks</h5>
+      <app-compact-movie-card
+        *ngFor="let movie of dramaPicks.slice(0, 6)"
+        [movie]="movie"
+      ></app-compact-movie-card>
+      <a
+        [routerLink]="['/discover', 'drama-picks']"
+        class="badge bg-secondary view-more"
+        >View more →</a
+      >
+    </div>
+  </div>
+</div>
