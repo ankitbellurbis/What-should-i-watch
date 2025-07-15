@@ -16,6 +16,7 @@ import { WatchlistComponent } from './pages/watchlist/watchlist.component';
 import { FooterComponent } from './component/footer/footer.component';
 import { TrendingCarouselComponent } from './component/trending-carousel/trending-carousel.component';
 import { CompactMovieCardComponent } from './component/compact-movie-card/compact-movie-card.component';
+import { SafeUrlPipe } from './pipes/safe-url.pipe';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { CompactMovieCardComponent } from './component/compact-movie-card/compac
     WatchlistComponent,
     FooterComponent,
     TrendingCarouselComponent,
-    CompactMovieCardComponent
+    CompactMovieCardComponent,
+    SafeUrlPipe
   ],
   imports: [
     BrowserModule,

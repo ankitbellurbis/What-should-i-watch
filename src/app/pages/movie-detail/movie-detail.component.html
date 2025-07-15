@@ -1,31 +1,81 @@
 <div class="container" *ngIf="!loading">
   <div class="row">
+    <!-- Poster -->
     <div class="col-md-4">
       <img [src]="posterUrl" class="img-fluid rounded" alt="Poster" />
     </div>
+
+    <!-- Movie Info -->
     <div class="col-md-8">
       <h2>{{ movie.title }}</h2>
       <p class="text-muted">
         Released: {{ movie.release_date }} | Rating: ⭐ {{ movie.vote_average }}
       </p>
       <p>{{ movie.overview }}</p>
-      <div class="mt-4">
-        <h5>Director</h5>
-        <p>{{ director }}</p>
-
-        <h5>Top Cast</h5>
-        <ul class="list-inline">
-          <li class="list-inline-item me-3" *ngFor="let actor of cast">
-            {{ actor.name }}
-          </li>
-        </ul>
+      <div class="d-flex justify-content-end mb-3">
+        <app-watchlist-button [movie]="movie"></app-watchlist-button>
       </div>
 
-      <app-watchlist-button [movie]="movie"></app-watchlist-button>
+      <!-- Trailer -->
+      <div *ngIf="trailerKey" class="mb-4">
+        <div class="ratio ratio-16x9">
+          <iframe
+            [src]="'https://www.youtube.com/embed/' + trailerKey | safeUrl"
+            frameborder="0"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+
+    </div>
+    <!-- Director and Cast Section -->
+    <div class="mt-2">
+      <div class="d-flex flex-wrap align-items-start">
+        <!-- Director -->
+        <div class="me-5">
+          <h5>Director</h5>
+          <p class="mb-3">{{ director }}</p>
+        </div>
+  
+        <!-- Cast List -->
+        <div>
+          <h5>Top Cast</h5>
+          <div class="d-flex flex-wrap">
+            <div
+              class="me-4 mb-3 text-center"
+              *ngFor="let actor of cast"
+              style="width: 100px"
+            >
+              <img
+                [src]="
+                  actor.profile_path
+                    ? 'https://image.tmdb.org/t/p/w185' + actor.profile_path
+                    : 'https://via.placeholder.com/100x150?text=No+Image'
+                "
+                alt="{{ actor.name }}"
+                class="img-fluid rounded mb-1"
+                style="height: 140px; object-fit: cover"
+              />
+              <small class="d-block text-dark">{{ actor.name }}</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 🎥 Similar Movies -->
+  <div *ngIf="similarMovies.length > 0" class="mt-2">
+    <h4>Similar Movies</h4>
+    <div class="row g-3">
+      <div class="col-6 col-md-3" *ngFor="let smovie of similarMovies">
+        <app-movie-card [movie]="smovie"></app-movie-card>
+      </div>
     </div>
   </div>
 </div>
 
+<!-- Loading Spinner -->
 <div *ngIf="loading" class="text-center mt-5">
   <div class="spinner-border text-primary" role="status"></div>
 </div>

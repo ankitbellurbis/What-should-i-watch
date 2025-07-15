@@ -1,5 +1,5 @@
 <div class="container">
-  <h2 class="mb-4 text-center">Search Movies</h2>
+  <h2 class="mb-4 text-center">Search Movies & Actors</h2>
 
   <div class="input-group mb-4">
     <input
@@ -7,18 +7,47 @@
       (keyup.enter)="search()"
       type="text"
       class="form-control"
-      placeholder="Enter movie title or actor..."
+      placeholder="Enter movie title or actor name..."
     />
     <button class="btn btn-primary" (click)="search()">Search</button>
   </div>
 
+  <!-- Loading Spinner -->
   <div *ngIf="loading" class="text-center">
     <div class="spinner-border text-primary" role="status"></div>
   </div>
 
-  <div class="row g-4" *ngIf="!loading">
-    <div class="col-md-3" *ngFor="let movie of movies">
-      <app-movie-card [movie]="movie"></app-movie-card>
+  <!-- No Results -->
+  <div *ngIf="noResults" class="alert alert-warning text-center">
+    No results found for "{{ query }}"
+  </div>
+
+  <!-- Movie Results -->
+  <div *ngIf="!loading && movies.length > 0">
+    <h4>🎬 Movie Results</h4>
+    <div class="row g-4 mb-5">
+      <div class="col-md-3" *ngFor="let movie of movies">
+        <app-movie-card [movie]="movie"></app-movie-card>
+      </div>
+    </div>
+  </div>
+
+  <!-- Actor Results -->
+  <div *ngIf="!loading && actors.length > 0">
+    <h4>🧑 Actor Results</h4>
+    <div class="row g-4">
+      <div class="col-6 col-md-2" *ngFor="let actor of actors">
+        <div class="card h-100 text-center">
+          <img
+            [src]="actor.profile_path ? 'https://image.tmdb.org/t/p/w185' + actor.profile_path : 'https://via.placeholder.com/185x278?text=No+Image'"
+            class="card-img-top"
+            [alt]="actor.name"
+          />
+          <div class="card-body p-2">
+            <h6 class="card-title mb-0">{{ actor.name }}</h6>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>

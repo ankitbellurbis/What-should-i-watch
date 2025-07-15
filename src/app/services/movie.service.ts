@@ -33,4 +33,23 @@ export class MovieService {
       `${this.apiUrl}/movie/${id}/credits?api_key=${environment.tmdbApiKey}`
     );
   }
+
+  getMovieVideos(id: number) {
+    return this.http.get(
+      `${this.apiUrl}/movie/${id}/videos?api_key=${environment.tmdbApiKey}`
+    );
+  }
+
+  getSimilarMovies(id: number) {
+    return this.http.get(
+      `${this.apiUrl}/movie/${id}/similar?api_key=${environment.tmdbApiKey}`
+    );
+  }
+
+  // Add this method
+  searchActors(query: string) {
+    return this.http.get(
+      `${this.apiUrl}/search/person?query=${query}&api_key=${environment.tmdbApiKey}`
+    );
+  }
 }

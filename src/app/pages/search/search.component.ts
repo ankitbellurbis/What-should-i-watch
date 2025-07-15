@@ -9,7 +9,9 @@ import { MovieService } from 'src/app/services/movie.service';
 export class SearchComponent {
   query = '';
   movies: any[] = [];
+  actors: any[] = [];
   loading = false;
+  noResults = false;
 
   constructor(private movieService: MovieService) {}
 
@@ -17,10 +19,19 @@ export class SearchComponent {
     if (!this.query.trim()) return;
 
     this.loading = true;
-    this.movieService.searchMovies(this.query).subscribe((res:any) => {
+    this.noResults = false;
+    this.movies = [];
+    this.actors = [];
+
+    this.movieService.searchMovies(this.query).subscribe((res: any) => {
       this.movies = res.results || [];
-      this.loading = false;
+
+      this.movieService.searchActors(this.query).subscribe((res2: any) => {
+        this.actors = res2.results || [];
+
+        this.noResults = this.movies.length === 0 && this.actors.length === 0;
+        this.loading = false;
+      });
     });
   }
-
 }
