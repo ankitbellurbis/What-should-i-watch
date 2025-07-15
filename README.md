@@ -22,7 +22,7 @@ A movie discovery app built with **Angular 16**, **Bootstrap 5.3** that uses the
 
 ```bash
 # Clone the repo
-git clone https://github.com/your-username/what-should-i-watch-tonight.git
+git clone https://github.com/ankitbellurbis/What-should-i-watch.git
 cd what-should-i-watch-tonight
 
 # Install dependencies
@@ -104,5 +104,5 @@ src/
 
 ## 🙌 Author
 
-Made with ❤️ by [Ankit](https://github.com/your-username)  
+Made with ❤️ by [Ankit](https://github.com/ankitbellurbis/)  
 © 2025 What Should I Watch Tonight?
