@@ -163,3 +163,16 @@
   0%, 100% { filter: brightness(1); }
   50% { filter: brightness(1.3); }
 }
+
+
+@media (prefers-reduced-motion: reduce) {
+  .halo-outer,
+  .ring-main,
+  .ring-dashed,
+  .ring-inner,
+  .spokes,
+  .segments,
+  .core {
+    animation: none !important;
+  }
+}
