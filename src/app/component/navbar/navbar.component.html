@@ -1,12 +1,22 @@
-<aside class="sidebar shadow-sm">
+<header class="top-navbar shadow-sm">
   <a class="brand" routerLink="/">🎬 Watch Tonight</a>
 
+  <nav class="top-nav-links">
+    <a class="top-btn" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+    <a class="top-btn action" routerLink="/search" routerLinkActive="active">Action</a>
+  </nav>
+</header>
+
+<aside class="sidebar shadow-sm">
   <nav class="sidebar-nav">
     <a class="sidebar-btn" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
       Home
     </a>
     <a class="sidebar-btn action" routerLink="/search" routerLinkActive="active">
       Action
+    </a>
+    <a class="sidebar-btn" routerLink="/tech-animation" routerLinkActive="active">
+      Tech Animation
     </a>
   </nav>
 </aside>

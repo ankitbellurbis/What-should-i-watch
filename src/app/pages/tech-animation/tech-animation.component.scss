@@ -1,0 +1,165 @@
+.tech-page {
+  color: #fff;
+}
+
+.reactor-stage {
+  position: relative;
+  width: min(460px, 92vw);
+  aspect-ratio: 1;
+  margin: 0 auto;
+  border-radius: 50%;
+  background: radial-gradient(circle at center, #12263f 0%, #060b16 58%, #02040a 100%);
+  border: 1px solid rgba(104, 211, 255, 0.25);
+  box-shadow: inset 0 0 24px rgba(82, 196, 255, 0.2), 0 0 26px rgba(82, 196, 255, 0.15);
+  overflow: hidden;
+}
+
+.reactor {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.halo-outer {
+  width: 92%;
+  height: 92%;
+  border: 2px solid rgba(137, 228, 255, 0.3);
+  box-shadow: 0 0 18px rgba(137, 228, 255, 0.2);
+  animation: pulse-slow 3.2s ease-in-out infinite;
+}
+
+.ring-main {
+  width: 76%;
+  height: 76%;
+  border: 3px solid rgba(137, 228, 255, 0.7);
+  box-shadow: 0 0 18px rgba(137, 228, 255, 0.35);
+  animation: spin-cw 9s linear infinite;
+}
+
+.ring-dashed {
+  width: 60%;
+  height: 60%;
+  border: 3px dashed rgba(74, 201, 255, 0.7);
+  animation: spin-ccw 6.5s linear infinite;
+}
+
+.ring-inner {
+  width: 42%;
+  height: 42%;
+  border: 2px solid rgba(170, 237, 255, 0.8);
+  animation: pulse-fast 1.8s ease-in-out infinite;
+}
+
+.spokes {
+  position: absolute;
+  inset: 14%;
+  border-radius: 50%;
+  background:
+    conic-gradient(from 0deg,
+      transparent 0deg 24deg,
+      rgba(135, 228, 255, 0.35) 24deg 26deg,
+      transparent 26deg 60deg,
+      rgba(135, 228, 255, 0.35) 60deg 62deg,
+      transparent 62deg 96deg,
+      rgba(135, 228, 255, 0.35) 96deg 98deg,
+      transparent 98deg 132deg,
+      rgba(135, 228, 255, 0.35) 132deg 134deg,
+      transparent 134deg 168deg,
+      rgba(135, 228, 255, 0.35) 168deg 170deg,
+      transparent 170deg 204deg,
+      rgba(135, 228, 255, 0.35) 204deg 206deg,
+      transparent 206deg 240deg,
+      rgba(135, 228, 255, 0.35) 240deg 242deg,
+      transparent 242deg 276deg,
+      rgba(135, 228, 255, 0.35) 276deg 278deg,
+      transparent 278deg 312deg,
+      rgba(135, 228, 255, 0.35) 312deg 314deg,
+      transparent 314deg 348deg,
+      rgba(135, 228, 255, 0.35) 348deg 350deg,
+      transparent 350deg 360deg);
+  mask: radial-gradient(circle, transparent 0 44%, #000 44% 70%, transparent 70%);
+  animation: spin-cw 12s linear infinite;
+}
+
+.segments {
+  position: absolute;
+  inset: 26%;
+  border-radius: 50%;
+  background:
+    conic-gradient(from 18deg,
+      rgba(120, 221, 255, 0.15) 0deg 16deg,
+      rgba(120, 221, 255, 0.8) 16deg 34deg,
+      transparent 34deg 52deg,
+      rgba(120, 221, 255, 0.8) 52deg 70deg,
+      transparent 70deg 88deg,
+      rgba(120, 221, 255, 0.8) 88deg 106deg,
+      transparent 106deg 124deg,
+      rgba(120, 221, 255, 0.8) 124deg 142deg,
+      transparent 142deg 160deg,
+      rgba(120, 221, 255, 0.8) 160deg 178deg,
+      transparent 178deg 196deg,
+      rgba(120, 221, 255, 0.8) 196deg 214deg,
+      transparent 214deg 232deg,
+      rgba(120, 221, 255, 0.8) 232deg 250deg,
+      transparent 250deg 268deg,
+      rgba(120, 221, 255, 0.8) 268deg 286deg,
+      transparent 286deg 304deg,
+      rgba(120, 221, 255, 0.8) 304deg 322deg,
+      transparent 322deg 340deg,
+      rgba(120, 221, 255, 0.8) 340deg 358deg,
+      transparent 358deg 360deg);
+  filter: drop-shadow(0 0 8px rgba(120, 221, 255, 0.7));
+  animation: spin-ccw 8s linear infinite;
+}
+
+.core-shell {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 24%;
+  height: 24%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  border: 2px solid rgba(171, 238, 255, 0.8);
+  box-shadow: inset 0 0 12px rgba(140, 228, 255, 0.5), 0 0 14px rgba(140, 228, 255, 0.45);
+}
+
+.core {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 14%;
+  height: 14%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: radial-gradient(circle, #f1fdff 0%, #9ce8ff 35%, #4ac9ff 65%, #1d6cc8 100%);
+  box-shadow: 0 0 22px rgba(135, 229, 255, 0.9), 0 0 45px rgba(120, 217, 255, 0.4);
+  animation: core-flicker 1.2s ease-in-out infinite;
+}
+
+@keyframes spin-cw {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+@keyframes spin-ccw {
+  from { transform: translate(-50%, -50%) rotate(360deg); }
+  to { transform: translate(-50%, -50%) rotate(0deg); }
+}
+
+@keyframes pulse-slow {
+  0%, 100% { opacity: 0.65; }
+  50% { opacity: 1; }
+}
+
+@keyframes pulse-fast {
+  0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.7; }
+  50% { transform: translate(-50%, -50%) scale(1.08); opacity: 1; }
+}
+
+@keyframes core-flicker {
+  0%, 100% { filter: brightness(1); }
+  50% { filter: brightness(1.3); }
+}

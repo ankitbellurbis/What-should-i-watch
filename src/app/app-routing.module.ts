@@ -6,6 +6,7 @@ import { DiscoverComponent } from './pages/discover/discover.component';
 import { SearchComponent } from './pages/search/search.component';
 import { MovieDetailComponent } from './pages/movie-detail/movie-detail.component';
 import { WatchlistComponent } from './pages/watchlist/watchlist.component';
+import { TechAnimationComponent } from './pages/tech-animation/tech-animation.component';
 
 const routes: Routes = [
   { path: '', component: LandingComponent },
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path: 'search', component: SearchComponent },
   { path: 'movie/:id', component: MovieDetailComponent },
   { path: 'watchlist', component: WatchlistComponent },
+  { path: 'tech-animation', component: TechAnimationComponent },
   { path: '**', redirectTo: '' }
 ];
 
