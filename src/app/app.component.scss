@@ -10,12 +10,14 @@ body {
 
 main {
   margin-left: 220px;
-  min-height: calc(100vh - 120px);
+  margin-top: 64px;
+  min-height: calc(100vh - 184px);
 }
 
 @media (max-width: 768px) {
   main {
     margin-left: 0;
+    margin-top: 88px;
   }
 }
 
