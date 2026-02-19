@@ -17,7 +17,7 @@ import { FooterComponent } from './component/footer/footer.component';
 import { TrendingCarouselComponent } from './component/trending-carousel/trending-carousel.component';
 import { CompactMovieCardComponent } from './component/compact-movie-card/compact-movie-card.component';
 import { SafeUrlPipe } from './pipes/safe-url.pipe';
-import { TechAnimationComponent } from './pages/tech-animation/tech-animation.component';
+import { ArcReactorComponent } from './pages/arc-reactor/arc-reactor.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +34,7 @@ import { TechAnimationComponent } from './pages/tech-animation/tech-animation.co
     TrendingCarouselComponent,
     CompactMovieCardComponent,
     SafeUrlPipe,
-    TechAnimationComponent
+    ArcReactorComponent
   ],
   imports: [
     BrowserModule,
