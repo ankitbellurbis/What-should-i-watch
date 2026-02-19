@@ -1,3 +1,7 @@
+:host {
+  display: block;
+}
+
 body {
   background-color: #121212;
   color: #ffffff;
@@ -5,5 +9,23 @@ body {
 }
 
 main {
-  // margin-top: 56px; // compensate for navbar height if overlapping
+  margin-left: 220px;
+  min-height: calc(100vh - 120px);
+}
+
+@media (max-width: 768px) {
+  main {
+    margin-left: 0;
+  }
+}
+
+app-footer {
+  display: block;
+  margin-left: 220px;
+}
+
+@media (max-width: 768px) {
+  app-footer {
+    margin-left: 0;
+  }
 }
