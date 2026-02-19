@@ -1,0 +1,97 @@
+.tech-page {
+  color: #fff;
+}
+
+.tech-stage {
+  position: relative;
+  width: min(440px, 92vw);
+  aspect-ratio: 1;
+  margin: 0 auto;
+  border-radius: 1rem;
+  background: radial-gradient(circle at center, #0b1e36 0%, #04070f 62%, #020409 100%);
+  border: 1px solid rgba(13, 110, 253, 0.3);
+  overflow: hidden;
+  box-shadow: 0 0 28px rgba(13, 110, 253, 0.2);
+}
+
+.ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  border: 2px solid rgba(13, 202, 240, 0.5);
+  transform: translate(-50%, -50%);
+}
+
+.ring-outer {
+  width: 78%;
+  height: 78%;
+  animation: spin-cw 10s linear infinite;
+}
+
+.ring-mid {
+  width: 56%;
+  height: 56%;
+  border-style: dashed;
+  animation: spin-ccw 7s linear infinite;
+}
+
+.ring-inner {
+  width: 34%;
+  height: 34%;
+  border-color: rgba(32, 201, 151, 0.8);
+  animation: pulse 2.2s ease-in-out infinite;
+}
+
+.core {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 16%;
+  height: 16%;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle, #9ee9ff, #0d6efd 68%, #053164);
+  box-shadow: 0 0 18px rgba(13, 202, 240, 0.7);
+  animation: flicker 1.8s ease-in-out infinite;
+}
+
+.node {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #20c997;
+  box-shadow: 0 0 12px rgba(32, 201, 151, 0.9);
+  animation: blink 1.4s ease-in-out infinite;
+}
+
+.n1 { top: 20%; left: 50%; }
+.n2 { top: 50%; right: 18%; animation-delay: 0.2s; }
+.n3 { bottom: 18%; left: 50%; animation-delay: 0.4s; }
+.n4 { top: 50%; left: 18%; animation-delay: 0.6s; }
+
+@keyframes spin-cw {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+@keyframes spin-ccw {
+  from { transform: translate(-50%, -50%) rotate(360deg); }
+  to { transform: translate(-50%, -50%) rotate(0deg); }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.7; }
+  50% { transform: translate(-50%, -50%) scale(1.12); opacity: 1; }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 0.35; }
+  50% { opacity: 1; }
+}
+
+@keyframes flicker {
+  0%, 100% { filter: brightness(1); }
+  50% { filter: brightness(1.35); }
+}
