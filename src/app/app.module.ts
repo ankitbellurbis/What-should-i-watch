@@ -16,6 +16,7 @@ import { WatchlistComponent } from './pages/watchlist/watchlist.component';
 import { FooterComponent } from './component/footer/footer.component';
 import { TrendingCarouselComponent } from './component/trending-carousel/trending-carousel.component';
 import { CompactMovieCardComponent } from './component/compact-movie-card/compact-movie-card.component';
+import { ArcReactorComponent } from './component/arc-reactor/arc-reactor.component';
 import { SafeUrlPipe } from './pipes/safe-url.pipe';
 
 @NgModule({
@@ -32,6 +33,7 @@ import { SafeUrlPipe } from './pipes/safe-url.pipe';
     FooterComponent,
     TrendingCarouselComponent,
     CompactMovieCardComponent,
+    ArcReactorComponent,
     SafeUrlPipe,
   ],
   imports: [
