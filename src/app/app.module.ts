@@ -35,6 +35,7 @@ import { ArcReactorComponent } from './pages/arc-reactor/arc-reactor.component';
     CompactMovieCardComponent,
     SafeUrlPipe,
     ArcReactorComponent
+    SafeUrlPipe
   ],
   imports: [
     BrowserModule,
