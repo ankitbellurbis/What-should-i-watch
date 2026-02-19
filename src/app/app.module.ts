@@ -32,7 +32,7 @@ import { SafeUrlPipe } from './pipes/safe-url.pipe';
     FooterComponent,
     TrendingCarouselComponent,
     CompactMovieCardComponent,
-    SafeUrlPipe
+    SafeUrlPipe,
   ],
   imports: [
     BrowserModule,
